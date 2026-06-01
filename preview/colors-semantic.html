@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--c-canvas);font-family:var(--font-display);padding:24px;box-sizing:border-box;display:flex;gap:20px;align-items:center}
+  .callout{background:var(--c-warning-bg);color:var(--c-warning-text);border-radius:var(--r-md);padding:14px 18px;font-size:14px;font-weight:500;flex:1}
+  .swatches{display:flex;gap:14px}
+  .sw{display:flex;flex-direction:column;gap:6px}
+  .chip{width:64px;height:48px;border-radius:var(--r-sm);border:1px solid var(--c-hairline)}
+  .meta{font-size:11px;color:var(--c-steel);font-family:var(--font-code)}
+</style>
+</head>
+<body>
+  <div class="callout">⚠ Heads up — this action can't be undone.</div>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:var(--c-warning-bg)"></div><div class="meta">bg #FEF7E6</div></div>
+    <div class="sw"><div class="chip" style="background:var(--c-warning-text)"></div><div class="meta">text #944F01</div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--c-canvas);font-family:var(--font-display);padding:24px;box-sizing:border-box;display:flex;flex-direction:column;gap:14px}
+  .field{display:flex;gap:14px;align-items:center}
+  label{width:120px;font-size:12px;font-weight:600;color:var(--c-steel)}
+  input{flex:1;font-family:var(--font-display);font-size:16px;color:var(--c-ink);background:var(--c-canvas);border:1px solid var(--c-hairline-strong);border-radius:var(--r-md);height:44px;padding:0 16px;box-sizing:border-box}
+  input::placeholder{color:var(--c-steel)}
+  input.focus{border:2px solid var(--c-brand-green-dark);padding:0 15px}
+  .search{flex:1;display:flex;align-items:center;gap:10px;background:var(--c-surface);border:1px solid var(--c-hairline-strong);border-radius:var(--r-md);height:44px;padding:0 16px;color:var(--c-steel);font-size:16px}
+  .search.lg{height:56px;background:var(--c-canvas)}
+</style>
+</head>
+<body>
+  <div class="field"><label>text-input</label><input placeholder="you@company.com"></div>
+  <div class="field"><label>focused</label><input class="focus" value="you@company.com"></div>
+  <div class="field"><label>search-pill</label><div class="search">⌕&nbsp; Search documentation</div></div>
+  <div class="field"><label>search · large</label><div class="search lg">⌕&nbsp; Search 100+ free courses</div></div>
+</body>
+</html>

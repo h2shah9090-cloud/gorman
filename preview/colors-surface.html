@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--c-canvas);font-family:var(--font-display);padding:24px;box-sizing:border-box}
+  .row{display:flex;gap:14px}
+  .sw{flex:1;display:flex;flex-direction:column;gap:8px}
+  .chip{height:80px;border-radius:var(--r-md);border:1px solid var(--c-hairline)}
+  .name{font-size:13px;font-weight:600;color:var(--c-ink)}
+  .meta{font-size:11px;color:var(--c-steel);font-family:var(--font-code)}
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--c-canvas)"></div><div class="name">Canvas</div><div class="meta">#FFFFFF</div></div>
+    <div class="sw"><div class="chip" style="background:var(--c-surface)"></div><div class="name">Surface</div><div class="meta">#F9FBFA</div></div>
+    <div class="sw"><div class="chip" style="background:var(--c-surface-soft)"></div><div class="name">Surface Soft</div><div class="meta">#F1F5F4</div></div>
+    <div class="sw"><div class="chip" style="background:var(--c-surface-feature)"></div><div class="name">Feature</div><div class="meta">#E3FCF7</div></div>
+    <div class="sw"><div class="chip" style="background:var(--c-canvas-dark)"></div><div class="name">Canvas Dark</div><div class="meta">#001E2B</div></div>
+  </div>
+</body>
+</html>

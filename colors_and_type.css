@@ -1,0 +1,173 @@
+/* ============================================================================
+   MongoDB Design System — Foundations
+   colors_and_type.css
+
+   Resolves the design-spec {tokens} into real CSS custom properties.
+   Color values are drawn from MongoDB's public LeafyGreen palette
+   (green.base #00ED64, black #001E2B, the neutral gray ramp) plus the
+   marketing/University category-accent colors (observation-based).
+
+   Two layers:
+     1. BASE tokens   — raw palette + scale values (--c-*, --fs-*, --sp-*, etc.)
+     2. SEMANTIC vars — role-based aliases used in markup (--h1, --p, --code …)
+   ========================================================================== */
+
+/* ----- Fonts -------------------------------------------------------------- */
+/* Display face: Euclid Circular A (proprietary, not web-distributable).
+   Substituted with MONTSERRAT — a geometric sans the user supplied as the
+   brand display face, self-hosted from /fonts (variable weight 100–900).
+   Code face: Source Code Pro (the real face; loaded from Google Fonts CDN).  */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* ===== 1. BASE TOKENS ================================================== */
+
+  /* --- GORMAN MEDICAL — PRIMARY BRAND COLORS (sampled from the logo) ------
+     These two colors are the brand's primary source of truth: the leaf-green
+     and the swirl-blue of the Gorman Medical & Specialty Center mark.        */
+  --c-brand-green:        #84C048;  /* logo leaf-green — primary brand color  */
+  --c-brand-green-bright: #90D848;  /* brighter green highlight (logo accent) */
+  --c-brand-green-dark:   #6CA438;  /* darker green for text/contrast on white*/
+  --c-brand-green-deep:   #517A29;  /* deepest green, AA text on white        */
+  --c-brand-green-soft:   #EDF5E1;  /* pale-green tint: bg fills, badges      */
+
+  --c-brand-blue:         #4884C0;  /* logo swirl-blue — secondary brand color*/
+  --c-brand-blue-dark:    #3A6E9E;  /* darker blue for text/contrast          */
+  --c-brand-blue-deep:    #2C547A;  /* deepest blue, AA text on white         */
+  --c-brand-blue-soft:    #E6EEF7;  /* pale-blue tint: bg fills, badges       */
+  --c-brand-green-mid:    #6CA438;  /* alias → green-dark (kept for back-compat)*/
+
+  /* --- Brand teal (dark hero / footer family) --- */
+  --c-brand-teal-deep:    #001E2B;  /* hero bands, footer, code canvas       */
+  --c-brand-teal:         #023430;  /* deep green-teal                       */
+  --c-brand-teal-mid:     #112733;  /* lighter teal for hero platform cards  */
+
+  /* --- Category accents (course tags ONLY) --- */
+  --c-accent-purple:      #6E3FC9;  /* Database & Security                   */
+  --c-accent-orange:      #C2570C;  /* Search                                */
+  --c-accent-pink:        #C0317A;  /* category variant                      */
+  --c-accent-blue:        #016BF8;  /* Atlas / cloud topics                  */
+
+  /* --- Surfaces --- */
+  --c-canvas:             #FFFFFF;  /* page bg + primary card surface        */
+  --c-canvas-dark:        #001E2B;  /* code blocks, dark mockup canvas       */
+  --c-surface:            #F9FBFA;  /* subtle section bg, search-pill rest   */
+  --c-surface-soft:       #F1F5F4;  /* quieter section divisions             */
+  --c-surface-feature:    #E3FCF7;  /* pale mint, featured pricing tier      */
+
+  /* --- Hairlines / borders --- */
+  --c-hairline:           #E8EDEB;  /* 1px borders + primary dividers        */
+  --c-hairline-soft:      #F1F5F4;  /* quieter dividers                      */
+  --c-hairline-strong:    #C1C7C6;  /* stronger 1px border for inputs        */
+  --c-hairline-dark:      rgba(255,255,255,0.16); /* borders on dark         */
+
+  /* --- Text --- */
+  --c-ink:                #001E2B;  /* primary headlines + body              */
+  --c-charcoal:           #21313C;  /* body emphasis                         */
+  --c-slate:              #3D4F58;  /* secondary text                        */
+  --c-steel:              #5C6C75;  /* tertiary text, captions               */
+  --c-stone:              #889397;  /* muted labels                          */
+  --c-muted:              #C1C7C6;  /* disabled, placeholders                */
+  --c-on-dark:            #FFFFFF;  /* white text on dark surfaces           */
+  --c-on-dark-muted:      rgba(255,255,255,0.72); /* reduced-opacity white   */
+  --c-on-primary:         #FFFFFF;  /* white text on the green primary button */
+  --c-primary-pressed:    #6CA438;  /* pressed primary CTA (darker green)     */
+
+  /* --- Semantic --- */
+  --c-warning-bg:         #FEF7E6;  /* pale yellow callout bg                */
+  --c-warning-text:       #944F01;  /* warning copy                          */
+
+  /* --- Elevation / shadows (tinted with brand-teal-deep #001E2B) --- */
+  --elev-1: 0 1px 2px 0 rgba(0,30,43,0.04);
+  --elev-2: 0 4px 12px 0 rgba(0,30,43,0.08);
+  --elev-3: 0 12px 24px -4px rgba(0,30,43,0.12);
+  --elev-4: 0 16px 48px -8px rgba(0,30,43,0.16);
+
+  /* --- Border radius --- */
+  --r-xs:   4px;    /* course category tags          */
+  --r-sm:   6px;    /* type badges, code chips        */
+  --r-md:   8px;    /* inputs, search-pill, code block*/
+  --r-lg:   12px;   /* cards, pricing tiers, tiles    */
+  --r-xl:   16px;   /* larger feature panels          */
+  --r-xxl:  24px;   /* featured product showcases     */
+  --r-full: 9999px; /* all buttons + status badges    */
+
+  /* --- Spacing (base 4px / 8px increment) --- */
+  --sp-xxs:        4px;
+  --sp-xs:         8px;
+  --sp-sm:         12px;
+  --sp-md:         16px;
+  --sp-lg:         24px;
+  --sp-xl:         32px;
+  --sp-xxl:        48px;
+  --sp-section:    64px;
+  --sp-section-lg: 96px;
+  --sp-hero:       120px;
+
+  /* --- Layout --- */
+  --container-max: 1280px;
+  --gutter:        32px;
+
+  /* --- Type families --- */
+  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-code:    'Source Code Pro', 'SF Mono', Menlo, Consolas, monospace;
+
+  /* --- Type scale: size / weight / line-height / tracking --- */
+  --fs-hero-display: 72px;  --lh-hero-display: 1.10;  --ls-hero-display: -1.5px;  --fw-hero-display: 500;
+  --fs-display-lg:   56px;  --lh-display-lg:   1.15;  --ls-display-lg:   -1px;    --fw-display-lg:   500;
+  --fs-h1:           48px;  --lh-h1:           1.20;  --ls-h1:           -0.5px;  --fw-h1:           500;
+  --fs-h2:           36px;  --lh-h2:           1.25;  --ls-h2:           -0.5px;  --fw-h2:           500;
+  --fs-h3:           28px;  --lh-h3:           1.30;  --ls-h3:           0;       --fw-h3:           500;
+  --fs-h4:           22px;  --lh-h4:           1.35;  --ls-h4:           0;       --fw-h4:           500;
+  --fs-h5:           18px;  --lh-h5:           1.40;  --ls-h5:           0;       --fw-h5:           600;
+  --fs-subtitle:     18px;  --lh-subtitle:     1.50;  --fw-subtitle:     400;
+  --fs-body-md:      16px;  --lh-body-md:      1.55;  --fw-body-md:      400;
+  --fs-body-sm:      14px;  --lh-body-sm:      1.50;  --fw-body-sm:      400;
+  --fs-body-sm-med:  14px;  --lh-body-sm-med:  1.50;  --fw-body-sm-med:  500;
+  --fs-caption-bold: 13px;  --lh-caption-bold: 1.40;  --fw-caption-bold: 600;
+  --fs-micro:        11px;  --lh-micro:        1.40;  --ls-micro:        1px;     --fw-micro:        600;
+  --fs-button:       14px;  --lh-button:       1.30;  --fw-button:       600;
+  --fs-code:         14px;  --lh-code:         1.55;  --fw-code:         400;
+}
+
+/* ===== 2. SEMANTIC TYPE ROLES =========================================== */
+/* Apply these classes directly, or copy the declarations into components.   */
+
+.t-hero-display { font-family: var(--font-display); font-size: var(--fs-hero-display); font-weight: var(--fw-hero-display); line-height: var(--lh-hero-display); letter-spacing: var(--ls-hero-display); }
+.t-display-lg  { font-family: var(--font-display); font-size: var(--fs-display-lg);  font-weight: var(--fw-display-lg);  line-height: var(--lh-display-lg);  letter-spacing: var(--ls-display-lg); }
+.t-h1          { font-family: var(--font-display); font-size: var(--fs-h1); font-weight: var(--fw-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-h1); }
+.t-h2          { font-family: var(--font-display); font-size: var(--fs-h2); font-weight: var(--fw-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
+.t-h3          { font-family: var(--font-display); font-size: var(--fs-h3); font-weight: var(--fw-h3); line-height: var(--lh-h3); }
+.t-h4          { font-family: var(--font-display); font-size: var(--fs-h4); font-weight: var(--fw-h4); line-height: var(--lh-h4); }
+.t-h5          { font-family: var(--font-display); font-size: var(--fs-h5); font-weight: var(--fw-h5); line-height: var(--lh-h5); }
+.t-subtitle    { font-family: var(--font-display); font-size: var(--fs-subtitle); font-weight: var(--fw-subtitle); line-height: var(--lh-subtitle); }
+.t-body-md     { font-family: var(--font-display); font-size: var(--fs-body-md); font-weight: var(--fw-body-md); line-height: var(--lh-body-md); }
+.t-body-sm     { font-family: var(--font-display); font-size: var(--fs-body-sm); font-weight: var(--fw-body-sm); line-height: var(--lh-body-sm); }
+.t-body-sm-med { font-family: var(--font-display); font-size: var(--fs-body-sm-med); font-weight: var(--fw-body-sm-med); line-height: var(--lh-body-sm-med); }
+.t-caption-bold{ font-family: var(--font-display); font-size: var(--fs-caption-bold); font-weight: var(--fw-caption-bold); line-height: var(--lh-caption-bold); }
+.t-micro       { font-family: var(--font-display); font-size: var(--fs-micro); font-weight: var(--fw-micro); line-height: var(--lh-micro); letter-spacing: var(--ls-micro); text-transform: uppercase; }
+.t-button      { font-family: var(--font-display); font-size: var(--fs-button); font-weight: var(--fw-button); line-height: var(--lh-button); }
+.t-code        { font-family: var(--font-code); font-size: var(--fs-code); font-weight: var(--fw-code); line-height: var(--lh-code); }
+
+/* Element-level defaults (optional convenience) */
+.ds-scope { font-family: var(--font-display); color: var(--c-ink); -webkit-font-smoothing: antialiased; }
+.ds-scope h1 { font: var(--fw-h1) var(--fs-h1)/var(--lh-h1) var(--font-display); letter-spacing: var(--ls-h1); margin: 0; }
+.ds-scope h2 { font: var(--fw-h2) var(--fs-h2)/var(--lh-h2) var(--font-display); letter-spacing: var(--ls-h2); margin: 0; }
+.ds-scope h3 { font: var(--fw-h3) var(--fs-h3)/var(--lh-h3) var(--font-display); margin: 0; }
+.ds-scope p  { font: var(--fw-body-md) var(--fs-body-md)/var(--lh-body-md) var(--font-display); margin: 0; }
+.ds-scope code, .ds-scope pre { font-family: var(--font-code); }

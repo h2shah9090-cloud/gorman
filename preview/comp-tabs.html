@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--c-canvas);font-family:var(--font-display);padding:24px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px}
+  .grp{display:flex;gap:10px;align-items:center}
+  .pill{font-size:14px;font-weight:500;border-radius:var(--r-full);padding:6px 16px;cursor:pointer}
+  .pill.idle{color:var(--c-steel);border:1px solid var(--c-hairline);background:transparent}
+  .pill.active{background:var(--c-ink);color:var(--c-on-dark);border:1px solid var(--c-ink)}
+  .seg{display:flex;gap:24px;border-bottom:1px solid var(--c-hairline);padding-bottom:0}
+  .tab{font-size:14px;font-weight:500;color:var(--c-steel);padding:0 0 12px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+  .tab.active{color:var(--c-brand-green-dark);border-bottom-color:var(--c-brand-green-dark)}
+  .cap{font-size:11px;font-family:var(--font-code);color:var(--c-stone)}
+</style>
+</head>
+<body>
+  <div>
+    <div class="grp"><span class="pill active">MongoDB Atlas</span><span class="pill idle">Enterprise Advanced</span><span class="pill idle">Community</span></div>
+  </div>
+  <div>
+    <div class="seg"><span class="tab active">Overview</span><span class="tab">Pricing</span><span class="tab">Features</span><span class="tab">FAQ</span></div>
+  </div>
+</body>
+</html>

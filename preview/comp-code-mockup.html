@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--c-brand-teal-deep);font-family:var(--font-display);padding:28px;box-sizing:border-box;display:flex;justify-content:center}
+  .mockup{width:100%;max-width:560px;background:#021A26;border-radius:var(--r-lg);box-shadow:var(--elev-3);overflow:hidden;border:1px solid var(--c-hairline-dark)}
+  .bar{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid var(--c-hairline-dark)}
+  .dot{width:11px;height:11px;border-radius:50%}
+  .file{margin-left:10px;font-family:var(--font-code);font-size:12px;color:var(--c-on-dark-muted)}
+  pre{margin:0;padding:18px 20px;font-family:var(--font-code);font-size:13.5px;line-height:1.7;color:#E5EEF0}
+  .c{color:#7A8B92}.g{color:#71F6BA}.b{color:#83C9F4}.s{color:#F5D78E}
+</style>
+</head>
+<body>
+  <div class="mockup">
+    <div class="bar"><span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span><span class="file">mongosh</span></div>
+    <pre><span class="c">// connect &amp; query</span>
+<span class="g">db</span>.<span class="b">movies</span>.<span class="g">find</span>({ year: <span class="s">2025</span> })
+  .<span class="g">sort</span>({ rating: <span class="s">-1</span> })
+  .<span class="g">limit</span>(<span class="s">10</span>)</pre>
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--c-surface);font-family:var(--font-display);padding:24px;box-sizing:border-box;display:flex;gap:18px;align-items:stretch}
+  .tier{flex:1;background:var(--c-canvas);border:1px solid var(--c-hairline);border-radius:var(--r-lg);padding:24px;position:relative}
+  .tier.feat{background:var(--c-surface-feature);border:2px solid var(--c-brand-green);box-shadow:var(--elev-2)}
+  .name{font-size:18px;font-weight:600;color:var(--c-ink)}
+  .price{font-size:32px;font-weight:500;color:var(--c-ink);margin:10px 0 2px;letter-spacing:-0.5px}
+  .per{font-size:13px;color:var(--c-steel)}
+  .cta{margin-top:18px;width:100%;border:none;font-family:var(--font-display);font-weight:600;font-size:14px;padding:10px 0;border-radius:var(--r-full);cursor:pointer}
+  .cta.ghost{background:transparent;border:1px solid var(--c-hairline-strong);color:var(--c-ink)}
+  .cta.green{background:var(--c-brand-green);color:var(--c-on-primary)}
+  .pop{position:absolute;top:-12px;left:24px;background:var(--c-brand-teal-deep);color:var(--c-brand-green);font-size:12px;font-weight:600;padding:4px 12px;border-radius:var(--r-full);white-space:nowrap}
+</style>
+</head>
+<body>
+  <div class="tier"><div class="name">Free</div><div class="price">$0</div><div class="per">forever</div><button class="cta ghost">Start free</button></div>
+  <div class="tier feat"><div class="pop">Most Popular</div><div class="name">Flex</div><div class="price">$0.10</div><div class="per">/ hour, scales to use</div><button class="cta green">Get started</button></div>
+  <div class="tier"><div class="name">Dedicated</div><div class="price">$57</div><div class="per">/ month and up</div><button class="cta ghost">Contact sales</button></div>
+</body>
+</html>

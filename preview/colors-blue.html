@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--c-canvas);font-family:var(--font-display);padding:24px;box-sizing:border-box}
+  .row{display:flex;gap:14px}
+  .sw{flex:1;display:flex;flex-direction:column;gap:8px}
+  .chip{height:84px;border-radius:var(--r-md);border:1px solid var(--c-hairline)}
+  .name{font-size:13px;font-weight:600;color:var(--c-ink)}
+  .meta{font-size:12px;color:var(--c-steel);font-family:var(--font-code)}
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--c-brand-blue)"></div><div class="name">Blue</div><div class="meta">#4884C0 · secondary</div></div>
+    <div class="sw"><div class="chip" style="background:var(--c-brand-blue-dark)"></div><div class="name">Dark</div><div class="meta">#3A6E9E</div></div>
+    <div class="sw"><div class="chip" style="background:var(--c-brand-blue-deep)"></div><div class="name">Deep</div><div class="meta">#2C547A · text</div></div>
+    <div class="sw"><div class="chip" style="background:var(--c-brand-blue-soft)"></div><div class="name">Soft</div><div class="meta">#E6EEF7 · tint</div></div>
+  </div>
+</body>
+</html>

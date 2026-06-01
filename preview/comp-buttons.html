@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--c-canvas);font-family:var(--font-display);padding:24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  button{font-family:var(--font-display);font-size:14px;font-weight:600;cursor:pointer;border:none}
+  .primary{background:var(--c-brand-green);color:var(--c-on-primary);padding:10px 22px;border-radius:var(--r-full)}
+  .pressed{background:var(--c-primary-pressed);color:var(--c-on-primary);padding:10px 22px;border-radius:var(--r-full)}
+  .secondary{background:transparent;color:var(--c-ink);border:1px solid var(--c-hairline-strong);padding:10px 22px;border-radius:var(--r-full)}
+  .disabled{background:var(--c-hairline);color:var(--c-stone);padding:10px 22px;border-radius:var(--r-full)}
+  .ghost{background:transparent;color:var(--c-ink);padding:8px 12px;border-radius:var(--r-md)}
+  .link{background:transparent;color:var(--c-brand-green-dark);padding:0;font-size:14px;text-decoration:none}
+</style>
+</head>
+<body>
+  <button class="primary">Try Free</button>
+  <button class="pressed">Pressed</button>
+  <button class="secondary">Contact sales</button>
+  <button class="disabled">Disabled</button>
+  <button class="ghost">Ghost</button>
+  <a class="link" href="#">Learn more →</a>
+</body>
+</html>

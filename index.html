@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gorman Medical &amp; Specialty Center — Comprehensive, Compassionate Care</title>
+  <meta name="description" content="Gorman Medical & Specialty Center delivers comprehensive primary and specialty healthcare with board-certified physicians and modern technology. Book your appointment today.">
+  <link rel="stylesheet" href="website/styles.css">
+  <script src="https://unpkg.com/lucide@0.292.0/dist/umd/lucide.js"></script>
+</head>
+<body>
+
+  <!-- ============ TOP UTILITY BAR ============ -->
+  <div class="topbar">
+    <div class="container">
+      <div class="tb-left">
+        <a href="tel:+15876353567"><i data-lucide="phone-call" class="ic"></i> Call us: +1 587-635-3567</a>
+        <a href="#" class="hide-sm"><i data-lucide="map-pin" class="ic"></i> 15366 18 St NW, Edmonton</a>
+      </div>
+      <a href="mailto:info@gormanmedical.com"><i data-lucide="mail" class="ic"></i> info@gormanmedical.com</a>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="container">
+      <a class="brand" href="index.html"><img src="assets/logo-horizontal-trim.png" alt="Gorman Medical & Specialty Center"></a>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="specialties.html">Specialties</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="spacer"></div>
+      <div class="header-cta">
+        <a class="btn btn-primary" href="contact.html"><i data-lucide="calendar-check" class="ic"></i> Book Appointment</a>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu"><i data-lucide="menu"></i></button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-bg">
+      <image-slot id="hero-bg" fit="cover" placeholder="Drop a hospital / facility photo"></image-slot>
+    </div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Hospital &amp; Specialty Clinic</div>
+          <h1>Expert Care for Every Stage of Life</h1>
+          <p class="hero-sub">Gorman Medical &amp; Specialty Center brings primary care and 20+ medical specialties together under one roof — delivered by board-certified physicians using modern technology.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html"><i data-lucide="calendar-check" class="ic"></i> Book Appointment</a>
+            <div class="emergency">
+              <span class="icon-circle green"><i data-lucide="phone"></i></span>
+              <span>
+                <span class="lbl">Call Us</span><br>
+                <span class="num">+1 587-635-3567</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <image-slot id="hero-doctor" fit="cover" shape="rounded" radius="20" placeholder="Drop a doctor / provider photo"></image-slot>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- opening-hours card overlapping hero -->
+  <div class="container">
+    <div class="hours-card">
+      <h4><i data-lucide="clock" style="vertical-align:-4px;color:var(--c-brand-green-dark)"></i> Opening Hours</h4>
+      <div class="row"><span class="d">Monday – Friday</span><span class="t">9:00 AM – 5:00 PM</span></div>
+      <div class="row"><span class="d">Saturday</span><span class="t">Closed</span></div>
+      <div class="row"><span class="d">Sunday</span><span class="t">Closed</span></div>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT + STATS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <div class="media">
+          <div class="media-frame">
+            <image-slot id="about-img" fit="cover" placeholder="Drop a care / consultation photo"></image-slot>
+            <div class="media-badge">
+              <span class="icon-circle soft-green"><i data-lucide="heart-pulse"></i></span>
+              <div>
+                <h5>Quality Healthcare</h5>
+                <p>Compassionate, evidence-based medicine for you and your family.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="eyebrow">About Us</div>
+          <h2 class="h-section">Excellent Care, Built on Humane Principles</h2>
+          <p class="lead" style="margin-top:18px">For over two decades, Gorman Medical &amp; Specialty Center has united trusted primary care with advanced specialty services — putting patients, not paperwork, at the center of everything we do.</p>
+          <a class="btn btn-primary" href="about.html" style="margin-top:30px">Learn More <i data-lucide="arrow-right" class="ic"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section bg-soft">
+    <div class="container">
+      <div class="center" style="max-width:680px;margin:0 auto 56px">
+        <div class="eyebrow center">Our Services</div>
+        <h2 class="h-section">Comprehensive Medical Services</h2>
+        <p class="lead" style="margin-top:14px">From routine check-ups to advanced specialty treatment, find the right care for every need.</p>
+      </div>
+      <div class="grid-3">
+        <div class="service-card">
+          <div class="thumb"><image-slot id="svc-1" fit="cover" placeholder="Primary care photo"></image-slot></div>
+          <span class="title-bar">Primary &amp; Preventive Care</span>
+          <div class="body">
+            <p>Annual physicals, screenings, vaccinations, and chronic-disease management for the whole family.</p>
+            <a class="more" href="services.html">Learn More <i data-lucide="arrow-right" class="ic"></i></a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="thumb"><image-slot id="svc-2" fit="cover" placeholder="Cardiology photo"></image-slot></div>
+          <span class="title-bar">Cardiology &amp; Heart Health</span>
+          <div class="body">
+            <p>Diagnostic testing, cardiac monitoring, and treatment plans led by experienced cardiologists.</p>
+            <a class="more" href="services.html">Learn More <i data-lucide="arrow-right" class="ic"></i></a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="thumb"><image-slot id="svc-3" fit="cover" placeholder="Diagnostics photo"></image-slot></div>
+          <span class="title-bar">Diagnostic Imaging &amp; Lab</span>
+          <div class="body">
+            <p>On-site MRI, ultrasound, X-ray, and a full laboratory for fast, accurate results.</p>
+            <a class="more" href="services.html">Learn More <i data-lucide="arrow-right" class="ic"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="center" style="margin-top:44px">
+        <a class="btn btn-outline" href="services.html">View All Services <i data-lucide="arrow-right" class="ic"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPECIALTIES OVERVIEW ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="center" style="max-width:680px;margin:0 auto 56px">
+        <div class="eyebrow center">Specialties</div>
+        <h2 class="h-section">20+ Medical Specialties</h2>
+        <p class="lead" style="margin-top:14px">Coordinated specialty care, so your providers work together on one plan for you.</p>
+      </div>
+      <div class="grid-4">
+        <div class="tile">
+          <div class="ic-wrap soft-blue" style="background:var(--c-brand-blue-soft);color:var(--c-brand-blue-dark)"><i data-lucide="heart-pulse"></i></div>
+          <h4>Cardiology</h4>
+          <p>Heart and vascular care from prevention to advanced intervention.</p>
+        </div>
+        <div class="tile">
+          <div class="ic-wrap" style="background:var(--c-brand-green-soft);color:var(--c-brand-green-dark)"><i data-lucide="brain"></i></div>
+          <h4>Neurology</h4>
+          <p>Diagnosis and treatment of conditions of the brain and nervous system.</p>
+        </div>
+        <div class="tile">
+          <div class="ic-wrap" style="background:var(--c-brand-blue-soft);color:var(--c-brand-blue-dark)"><i data-lucide="bone"></i></div>
+          <h4>Orthopedics</h4>
+          <p>Bone, joint, and sports-injury care including surgical options.</p>
+        </div>
+        <div class="tile">
+          <div class="ic-wrap" style="background:var(--c-brand-green-soft);color:var(--c-brand-green-dark)"><i data-lucide="baby"></i></div>
+          <h4>Pediatrics</h4>
+          <p>Gentle, attentive care for infants, children, and adolescents.</p>
+        </div>
+      </div>
+      <div class="center" style="margin-top:44px">
+        <a class="btn btn-outline" href="specialties.html">Explore All Specialties <i data-lucide="arrow-right" class="ic"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE US ============ -->
+  <section class="section bg-blue-soft">
+    <div class="container">
+      <div class="split">
+        <div class="content">
+          <div class="eyebrow">Why Choose Us</div>
+          <h2 class="h-section">A Healthcare Experience Built Around You</h2>
+          <p class="lead" style="margin:18px 0 30px">We combine the expertise of a major medical center with the warmth and accessibility of a neighborhood clinic.</p>
+          <div class="why-list">
+            <div class="why-item">
+              <span class="icon-circle soft-green"><i data-lucide="badge-check"></i></span>
+              <div><h4>Board-Certified Specialists</h4><p>Every provider is rigorously credentialed and committed to ongoing education.</p></div>
+            </div>
+            <div class="why-item">
+              <span class="icon-circle soft-blue"><i data-lucide="cpu"></i></span>
+              <div><h4>Modern Technology</h4><p>Advanced imaging, on-site labs, and electronic records for faster, safer care.</p></div>
+            </div>
+            <div class="why-item">
+              <span class="icon-circle soft-green"><i data-lucide="calendar-clock"></i></span>
+              <div><h4>Same-Day Appointments</h4><p>Flexible scheduling and a patient portal that fits your life, not the other way around.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="media">
+          <div class="media-frame">
+            <image-slot id="why-img" fit="cover" placeholder="Drop a facility / team photo"></image-slot>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROVIDERS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="center" style="max-width:680px;margin:0 auto 56px">
+        <div class="eyebrow center">Our Team</div>
+        <h2 class="h-section">Meet Our Physicians</h2>
+        <p class="lead" style="margin-top:14px">Experienced, compassionate doctors dedicated to your long-term health.</p>
+      </div>
+      <div class="grid-4">
+        <div class="provider">
+          <image-slot id="doc-1" fit="cover" placeholder="Doctor photo"></image-slot>
+          <div class="info"><h4>Dr. Alana Reyes</h4><div class="role">Family Medicine</div>
+            <div class="socials"><a href="#"><i data-lucide="linkedin" style="width:18px"></i></a><a href="#"><i data-lucide="mail" style="width:18px"></i></a></div></div>
+        </div>
+        <div class="provider">
+          <image-slot id="doc-2" fit="cover" placeholder="Doctor photo"></image-slot>
+          <div class="info"><h4>Dr. Marcus Lin</h4><div class="role">Cardiology</div>
+            <div class="socials"><a href="#"><i data-lucide="linkedin" style="width:18px"></i></a><a href="#"><i data-lucide="mail" style="width:18px"></i></a></div></div>
+        </div>
+        <div class="provider">
+          <image-slot id="doc-3" fit="cover" placeholder="Doctor photo"></image-slot>
+          <div class="info"><h4>Dr. Priya Nair</h4><div class="role">Pediatrics</div>
+            <div class="socials"><a href="#"><i data-lucide="linkedin" style="width:18px"></i></a><a href="#"><i data-lucide="mail" style="width:18px"></i></a></div></div>
+        </div>
+        <div class="provider">
+          <image-slot id="doc-4" fit="cover" placeholder="Doctor photo"></image-slot>
+          <div class="info"><h4>Dr. James Okafor</h4><div class="role">Orthopedics</div>
+            <div class="socials"><a href="#"><i data-lucide="linkedin" style="width:18px"></i></a><a href="#"><i data-lucide="mail" style="width:18px"></i></a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section bg-soft">
+    <div class="container">
+      <div class="center" style="max-width:680px;margin:0 auto 56px">
+        <div class="eyebrow center">Patient Stories</div>
+        <h2 class="h-section">Trusted by Our Community</h2>
+      </div>
+      <div class="grid-2">
+        <div class="testi">
+          <div class="quote-mark">&ldquo;</div>
+          <p>From scheduling to follow-up, every step felt personal. My cardiologist took the time to explain everything — I've never felt so cared for at a clinic.</p>
+          <div class="who">
+            <image-slot id="testi-1" fit="cover" shape="circle" placeholder="Photo"></image-slot>
+            <div><h5>Sandra M.</h5><div class="role">Patient since 2019</div></div>
+            <span class="stars" style="margin-left:auto"><i data-lucide="star" style="width:16px;fill:currentColor"></i><i data-lucide="star" style="width:16px;fill:currentColor"></i><i data-lucide="star" style="width:16px;fill:currentColor"></i><i data-lucide="star" style="width:16px;fill:currentColor"></i><i data-lucide="star" style="width:16px;fill:currentColor"></i></span>
+          </div>
+        </div>
+        <div class="testi">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Same-day appointment, on-site labs, and results within hours. The whole team is professional and genuinely kind. Highly recommend Gorman Medical.</p>
+          <div class="who">
+            <image-slot id="testi-2" fit="cover" shape="circle" placeholder="Photo"></image-slot>
+            <div><h5>David O.</h5><div class="role">Patient since 2021</div></div>
+            <span class="stars" style="margin-left:auto"><i data-lucide="star" style="width:16px;fill:currentColor"></i><i data-lucide="star" style="width:16px;fill:currentColor"></i><i data-lucide="star" style="width:16px;fill:currentColor"></i><i data-lucide="star" style="width:16px;fill:currentColor"></i><i data-lucide="star" style="width:16px;fill:currentColor"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INSURANCE / PARTNERSHIPS ============ -->
+  <section class="section">
+    <div class="container center">
+      <div class="eyebrow center">Insurance &amp; Partnerships</div>
+      <h2 class="h-section" style="margin-bottom:40px">We Accept Most Major Plans</h2>
+      <div class="logo-row">
+        <span class="lg">Aetna</span>
+        <span class="lg">Cigna</span>
+        <span class="lg">BlueCross</span>
+        <span class="lg">UnitedHealth</span>
+        <span class="lg">Humana</span>
+        <span class="lg">Medicare</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BAND ============ -->
+  <section style="padding:0 0 96px">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Ready to prioritize your health?</h2>
+          <p>Book an appointment today or call us — new patients are always welcome.</p>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="contact.html"><i data-lucide="calendar-check" class="ic"></i> Book Appointment</a>
+          <a class="btn btn-outline-light" href="tel:+15876353567"><i data-lucide="phone" class="ic"></i> +1 587-635-3567</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="brand-foot">
+          <img src="assets/logo-horizontal-trim.png" alt="Gorman Medical & Specialty Center" style="filter:brightness(0) invert(1);opacity:.95">
+          <p class="blurb">Comprehensive primary and specialty healthcare delivered with compassion, expertise, and modern technology.</p>
+          <div class="socials">
+            <a href="#"><i data-lucide="facebook" style="width:18px"></i></a>
+            <a href="#"><i data-lucide="instagram" style="width:18px"></i></a>
+            <a href="#"><i data-lucide="linkedin" style="width:18px"></i></a>
+            <a href="#"><i data-lucide="twitter" style="width:18px"></i></a>
+          </div>
+        </div>
+        <div>
+          <h6>Quick Links</h6>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="specialties.html">Specialties</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6>Services</h6>
+          <ul>
+            <li><a href="services.html">Primary Care</a></li>
+            <li><a href="services.html">Cardiology</a></li>
+            <li><a href="services.html">Diagnostics</a></li>
+            <li><a href="services.html">Pediatrics</a></li>
+            <li><a href="services.html">Women's Health</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6>Get in Touch</h6>
+          <ul>
+            <li class="contact-li"><i data-lucide="map-pin" class="ic" style="width:18px"></i> 15366 18 St NW, Edmonton, AB T5Y 3Z5</li>
+            <li class="contact-li"><i data-lucide="phone" class="ic" style="width:18px"></i> +1 587-635-3567</li>
+            <li class="contact-li"><i data-lucide="mail" class="ic" style="width:18px"></i> info@gormanmedical.com</li>
+            <li class="contact-li"><i data-lucide="clock" class="ic" style="width:18px"></i> Mon–Fri 9AM–5PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© <span id="year">2026</span> Gorman Medical &amp; Specialty Center. All rights reserved.</span>
+        <span>Privacy Policy · Terms of Service · Accessibility</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="website/image-slot.js"></script>
+  <script src="website/app.js"></script>
+</body>
+</html>

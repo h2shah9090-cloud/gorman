@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--c-surface);font-family:var(--font-display);padding:24px;box-sizing:border-box;display:flex;gap:18px}
+  .card{flex:1;background:var(--c-canvas);border:1px solid var(--c-hairline);border-radius:var(--r-lg);padding:24px}
+  .card.feat{box-shadow:var(--elev-2);border:none}
+  .card.dark{background:var(--c-brand-teal-deep);border:none;color:var(--c-on-dark)}
+  h4{margin:0 0 8px;font-size:18px;font-weight:600;color:var(--c-ink)}
+  .dark h4{color:var(--c-on-dark)}
+  p{margin:0;font-size:14px;line-height:1.5;color:var(--c-steel)}
+  .dark p{color:var(--c-on-dark-muted)}
+  .tag{font-size:11px;font-family:var(--font-code);color:var(--c-stone);margin-top:14px}
+</style>
+</head>
+<body>
+  <div class="card"><h4>card-base</h4><p>White surface, 12px radius, 1px hairline border. Flat by default.</p><div class="tag">flat · --r-lg</div></div>
+  <div class="card feat"><h4>card-feature</h4><p>Elevated feature card with soft teal-tinted shadow (elevation 2).</p><div class="tag">elev-2</div></div>
+  <div class="card dark"><h4>card-feature-dark</h4><p>Deep-teal feature card that sits on a hero band.</p><div class="tag" style="color:var(--c-on-dark-muted)">#001E2B</div></div>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Gorman Medical & Specialty Center</title>
+  <meta name="description" content="Contact Gorman Medical & Specialty Center — address, phone, email, hours, emergency line, appointment request form, and map.">
+  <link rel="stylesheet" href="website/styles.css">
+  <script src="https://unpkg.com/lucide@0.292.0/dist/umd/lucide.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="tb-left">
+        <a href="tel:+15876353567"><i data-lucide="phone-call" class="ic"></i> Call us: +1 587-635-3567</a>
+        <a href="#" class="hide-sm"><i data-lucide="map-pin" class="ic"></i> 15366 18 St NW, Edmonton</a>
+      </div>
+      <a href="mailto:info@gormanmedical.com"><i data-lucide="mail" class="ic"></i> info@gormanmedical.com</a>
+    </div>
+  </div>
+  <header class="header">
+    <div class="container">
+      <a class="brand" href="index.html"><img src="assets/logo-horizontal-trim.png" alt="Gorman Medical & Specialty Center"></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="specialties.html">Specialties</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="spacer"></div>
+      <div class="header-cta">
+        <a class="btn btn-primary" href="contact.html"><i data-lucide="calendar-check" class="ic"></i> Book Appointment</a>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu"><i data-lucide="menu"></i></button>
+    </div>
+  </header>
+  <section class="page-head">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <div class="eyebrow">Get in Touch</div>
+          <h2 class="h-section" style="margin-bottom:10px">We&rsquo;re Here to Help</h2>
+          <p class="lead" style="margin-bottom:28px">Reach out to book an appointment, ask a question, or learn more about our services. Our team responds within one business day.</p>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            
+        <div class="info-card">
+          <span class="icon-circle soft-blue"><i data-lucide="map-pin"></i></span>
+          <div><h5>Visit Us</h5><p>15366 18 St NW, Edmonton, AB T5Y 3Z5</p></div>
+        </div>
+            
+        <div class="info-card">
+          <span class="icon-circle soft-green"><i data-lucide="phone"></i></span>
+          <div><h5>Call Us</h5><p>Main: +1 587-635-3567</p></div>
+        </div>
+            
+        <div class="info-card">
+          <span class="icon-circle soft-blue"><i data-lucide="mail"></i></span>
+          <div><h5>Email Us</h5><p>info@gormanmedical.com</p></div>
+        </div>
+            
+        <div class="info-card">
+          <span class="icon-circle soft-green"><i data-lucide="clock"></i></span>
+          <div><h5>Hours</h5><p>Mon–Fri 9:00 AM – 5:00 PM &nbsp;·&nbsp; Sat–Sun Closed</p></div>
+        </div>
+            
+        <div class="info-card">
+          <span class="icon-circle soft-green"><i data-lucide="siren"></i></span>
+          <div><h5>Emergency</h5><p>For medical emergencies, call 911 immediately.</p></div>
+        </div>
+          </div>
+        </div>
+        <div>
+          <div class="tile" style="padding:34px">
+            <h3 style="font-size:24px;margin-bottom:6px">Request an Appointment</h3>
+            <p class="muted" style="margin-bottom:24px;font-size:14.5px">Fill out the form and our team will confirm your visit.</p>
+            <form onsubmit="event.preventDefault(); this.reset(); document.getElementById('form-ok').style.display='flex';">
+              <div class="form-row">
+                <div class="field"><label>First Name</label><input type="text" required placeholder="Jane"></div>
+                <div class="field"><label>Last Name</label><input type="text" required placeholder="Doe"></div>
+              </div>
+              <div class="form-row">
+                <div class="field"><label>Email</label><input type="email" required placeholder="jane@example.com"></div>
+                <div class="field"><label>Phone</label><input type="tel" required placeholder="(555) 000-0000"></div>
+              </div>
+              <div class="field"><label>Department / Service</label>
+                <select>
+                  <option>Primary &amp; Preventive Care</option>
+                  <option>Cardiology</option>
+                  <option>Pediatrics</option>
+                  <option>Orthopedics</option>
+                  <option>Women&rsquo;s Health</option>
+                  <option>Diagnostic Imaging &amp; Lab</option>
+                  <option>Other / Not sure</option>
+                </select>
+              </div>
+              <div class="field"><label>Message</label><textarea placeholder="Tell us briefly what you need…"></textarea></div>
+              <button type="submit" class="btn btn-primary btn-block" style="width:100%;justify-content:center"><i data-lucide="send" class="ic"></i> Request Appointment</button>
+              <div id="form-ok" style="display:none;align-items:center;gap:10px;margin-top:16px;color:var(--c-brand-green-dark);font-weight:600;font-size:14.5px"><i data-lucide="check-circle"></i> Thank you! We&rsquo;ll be in touch shortly.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0 0 96px">
+    <div class="container">
+      <iframe class="map-embed" loading="lazy" title="Gorman Medical location map"
+        src="https://www.google.com/maps?q=15366+18+St+NW,+Edmonton,+AB&output=embed"></iframe>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="brand-foot">
+          <img src="assets/logo-horizontal-trim.png" alt="Gorman Medical & Specialty Center" style="filter:brightness(0) invert(1);opacity:.95">
+          <p class="blurb">Comprehensive primary and specialty healthcare delivered with compassion, expertise, and modern technology.</p>
+          <div class="socials">
+            <a href="#"><i data-lucide="facebook" style="width:18px"></i></a>
+            <a href="#"><i data-lucide="instagram" style="width:18px"></i></a>
+            <a href="#"><i data-lucide="linkedin" style="width:18px"></i></a>
+            <a href="#"><i data-lucide="twitter" style="width:18px"></i></a>
+          </div>
+        </div>
+        <div>
+          <h6>Quick Links</h6>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="specialties.html">Specialties</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6>Services</h6>
+          <ul>
+            <li><a href="services.html">Primary Care</a></li>
+            <li><a href="services.html">Cardiology</a></li>
+            <li><a href="services.html">Diagnostics</a></li>
+            <li><a href="services.html">Pediatrics</a></li>
+            <li><a href="services.html">Women&rsquo;s Health</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6>Get in Touch</h6>
+          <ul>
+            <li class="contact-li"><i data-lucide="map-pin" class="ic" style="width:18px"></i> 15366 18 St NW, Edmonton, AB T5Y 3Z5</li>
+            <li class="contact-li"><i data-lucide="phone" class="ic" style="width:18px"></i> +1 587-635-3567</li>
+            <li class="contact-li"><i data-lucide="mail" class="ic" style="width:18px"></i> info@gormanmedical.com</li>
+            <li class="contact-li"><i data-lucide="clock" class="ic" style="width:18px"></i> Mon–Fri 9AM–5PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© <span id="year">2026</span> Gorman Medical &amp; Specialty Center. All rights reserved.</span>
+        <span>Privacy Policy · Terms of Service · Accessibility</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="website/image-slot.js"></script>
+  <script src="website/app.js"></script>
+</body>
+</html>

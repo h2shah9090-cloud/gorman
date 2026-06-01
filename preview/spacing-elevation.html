@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--c-surface);font-family:var(--font-display);padding:32px 24px;box-sizing:border-box;display:flex;gap:24px;align-items:center;justify-content:space-between}
+  .sw{display:flex;flex-direction:column;align-items:center;gap:12px;flex:1}
+  .box{width:78px;height:60px;background:var(--c-canvas);border-radius:var(--r-lg);border:1px solid var(--c-hairline)}
+  .name{font-size:12px;font-weight:600;color:var(--c-ink)}
+  .val{font-family:var(--font-code);font-size:10px;color:var(--c-steel);text-align:center}
+</style>
+</head>
+<body>
+  <div class="sw"><div class="box"></div><div class="name">0 · flat</div><div class="val">hairline border</div></div>
+  <div class="sw"><div class="box" style="box-shadow:var(--elev-1)"></div><div class="name">1 · subtle</div><div class="val">.04 / 1px 2px</div></div>
+  <div class="sw"><div class="box" style="box-shadow:var(--elev-2)"></div><div class="name">2 · card</div><div class="val">.08 / 4px 12px</div></div>
+  <div class="sw"><div class="box" style="box-shadow:var(--elev-3)"></div><div class="name">3 · mockup</div><div class="val">.12 / 12px 24px</div></div>
+  <div class="sw"><div class="box" style="box-shadow:var(--elev-4)"></div><div class="name">4 · modal</div><div class="val">.16 / 16px 48px</div></div>
+</body>
+</html>
