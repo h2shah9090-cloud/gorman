@@ -136,38 +136,6 @@
       margin: 0 auto 52px;
     }
 
-    /* ---- countdown ---- */
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 56px;
-      flex-wrap: wrap;
-    }
-    .cd-block {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      padding: 22px 28px;
-      min-width: 100px;
-      backdrop-filter: blur(10px);
-    }
-    .cd-num {
-      font-size: 52px;
-      font-weight: 800;
-      line-height: 1;
-      color: #fff;
-      letter-spacing: -2px;
-    }
-    .cd-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-      margin-top: 8px;
-    }
-
     /* ---- email form ---- */
     .notify-form {
       display: flex;
@@ -300,26 +268,6 @@
 
         <p>Gorman Medical & Specialty Center is putting the finishing touches on our new website. World-class healthcare, all under one roof — opening soon in Edmonton.</p>
 
-        <!-- countdown -->
-        <div class="countdown">
-          <div class="cd-block">
-            <div class="cd-num" id="cd-days">00</div>
-            <div class="cd-label">Days</div>
-          </div>
-          <div class="cd-block">
-            <div class="cd-num" id="cd-hours">00</div>
-            <div class="cd-label">Hours</div>
-          </div>
-          <div class="cd-block">
-            <div class="cd-num" id="cd-mins">00</div>
-            <div class="cd-label">Minutes</div>
-          </div>
-          <div class="cd-block">
-            <div class="cd-num" id="cd-secs">00</div>
-            <div class="cd-label">Seconds</div>
-          </div>
-        </div>
-
         <!-- email notify -->
         <div class="notify-form" id="notify-form">
           <input type="email" id="notify-email" placeholder="Enter your email address">
@@ -362,35 +310,6 @@
   <script src="website/image-slot.js"></script>
   <script>
     lucide.createIcons();
-
-    // ---- Countdown to launch date (90 days from today) ----
-    const launch = new Date();
-    launch.setDate(launch.getDate() + 90);
-    launch.setHours(9, 0, 0, 0);
-
-    function pad(n) { return String(n).padStart(2, '0'); }
-
-    function tick() {
-      const now = new Date();
-      const diff = launch - now;
-      if (diff <= 0) {
-        document.getElementById('cd-days').textContent = '00';
-        document.getElementById('cd-hours').textContent = '00';
-        document.getElementById('cd-mins').textContent = '00';
-        document.getElementById('cd-secs').textContent = '00';
-        return;
-      }
-      const d = Math.floor(diff / 86400000);
-      const h = Math.floor((diff % 86400000) / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const s = Math.floor((diff % 60000) / 1000);
-      document.getElementById('cd-days').textContent  = pad(d);
-      document.getElementById('cd-hours').textContent = pad(h);
-      document.getElementById('cd-mins').textContent  = pad(m);
-      document.getElementById('cd-secs').textContent  = pad(s);
-    }
-    tick();
-    setInterval(tick, 1000);
 
     // ---- Notify form ----
     function handleNotify() {
