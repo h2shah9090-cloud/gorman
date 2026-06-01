@@ -3,325 +3,593 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gorman Medical & Specialty Center — Coming Soon</title>
-  <meta name="description" content="Gorman Medical & Specialty Center is launching soon. Comprehensive primary and specialty healthcare delivered with compassion.">
+  <title>Gorman Medical & Specialty Center — Comprehensive, Compassionate Care</title>
+  <meta name="description" content="Gorman Medical & Specialty Center delivers comprehensive primary and specialty healthcare with board-certified physicians and modern technology. Book your appointment today.">
   <link rel="stylesheet" href="website/styles.css">
   <script src="https://unpkg.com/lucide@0.292.0/dist/umd/lucide.js"></script>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: var(--font-display, 'Montserrat', sans-serif);
-      background: var(--c-brand-blue-deep, #1c3552);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+    /* ======================= COMING SOON POPUP ======================= */
+    .cs-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,30,43,0.72);
+      backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px;
+      animation: fadeIn .3s ease;
     }
-
-    /* ---- background glow blobs ---- */
-    .bg-blobs {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
+    @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+    .cs-modal {
+      background: #fff;
+      border-radius: var(--r-xxl);
+      max-width: 560px; width: 100%;
       overflow: hidden;
-    }
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.18;
-    }
-    .blob-1 {
-      width: 700px; height: 700px;
-      background: #4884C0;
-      top: -200px; left: -200px;
-    }
-    .blob-2 {
-      width: 500px; height: 500px;
-      background: #84C048;
-      bottom: -100px; right: -100px;
-    }
-    .blob-3 {
-      width: 300px; height: 300px;
-      background: #4884C0;
-      top: 50%; left: 60%;
-    }
-
-    /* ---- layout ---- */
-    .page {
+      box-shadow: var(--elev-4);
+      animation: slideUp .35s cubic-bezier(.22,.61,.36,1);
       position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
-
-    /* ---- header ---- */
-    .cs-header {
-      padding: 36px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .cs-header img {
-      height: 44px;
-      filter: brightness(0) invert(1);
-      opacity: 0.95;
-    }
-    .cs-contact {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      transition: color .2s;
-    }
-    .cs-contact:hover { color: #84C048; }
-    .cs-contact svg { width: 16px; height: 16px; }
-
-    /* ---- main ---- */
-    .cs-main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 24px;
-    }
-
-    .cs-card {
-      max-width: 760px;
-      width: 100%;
+    @keyframes slideUp { from { transform:translateY(40px); opacity:0 } to { transform:translateY(0); opacity:1 } }
+    .cs-modal-top {
+      background: var(--c-brand-blue-deep);
+      background-image: radial-gradient(500px 280px at 90% -10%, rgba(132,192,72,0.30), transparent 60%);
+      padding: 44px 44px 40px;
       text-align: center;
-    }
-
-    .cs-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(132, 192, 72, 0.15);
-      border: 1px solid rgba(132, 192, 72, 0.35);
-      color: #a8d96b;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      border-radius: 100px;
-      padding: 8px 18px;
-      margin-bottom: 36px;
-    }
-    .cs-badge svg { width: 14px; height: 14px; }
-
-    .cs-card h1 {
-      font-size: clamp(44px, 7vw, 72px);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -2px;
       color: #fff;
+      position: relative;
+    }
+    .cs-modal-top .badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(132,192,72,0.18); border: 1px solid rgba(132,192,72,0.4);
+      color: #a8d96b; font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; border-radius: var(--r-full); padding: 7px 16px;
       margin-bottom: 24px;
     }
-    .cs-card h1 span {
-      color: #84C048;
+    .cs-modal-top h2 {
+      color: #fff; font-size: 30px; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 14px;
     }
-
-    .cs-card p {
-      font-size: 18px;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.7);
-      max-width: 52ch;
-      margin: 0 auto 52px;
+    .cs-modal-top h2 span { color: var(--c-brand-green-bright); }
+    .cs-modal-top p {
+      font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.65; max-width: 38ch; margin: 0 auto;
     }
-
-    /* ---- email form ---- */
-    .notify-form {
-      display: flex;
-      gap: 12px;
-      max-width: 480px;
-      margin: 0 auto 52px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .notify-form input {
-      flex: 1;
-      min-width: 220px;
-      padding: 15px 20px;
-      border-radius: 100px;
-      border: 1.5px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      font-size: 15px;
-      font-family: inherit;
-      outline: none;
-      transition: border-color .2s;
-    }
-    .notify-form input::placeholder { color: rgba(255,255,255,0.4); }
-    .notify-form input:focus { border-color: #84C048; }
-    .notify-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #84C048;
-      color: #fff;
-      font-family: inherit;
-      font-size: 15px;
-      font-weight: 700;
-      border: none;
-      border-radius: 100px;
-      padding: 15px 28px;
-      cursor: pointer;
-      transition: background .2s, transform .15s;
-      white-space: nowrap;
-    }
-    .notify-btn:hover { background: #6ea038; }
-    .notify-btn:active { transform: translateY(1px); }
-    .notify-btn svg { width: 16px; height: 16px; }
-
-    .success-msg {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: #a8d96b;
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 52px;
-    }
-    .success-msg svg { width: 20px; height: 20px; }
-
-    /* ---- info pills ---- */
-    .info-pills {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 100px;
-      padding: 10px 18px;
-      font-size: 13.5px;
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
+    .cs-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.12); border: none; cursor: pointer;
+      color: rgba(255,255,255,0.7); display: flex; align-items: center; justify-content: center;
       transition: background .2s, color .2s;
     }
-    .pill:hover { background: rgba(255,255,255,0.12); color: #fff; }
-    .pill svg { width: 15px; height: 15px; color: #84C048; flex-shrink: 0; }
-
-    /* ---- footer ---- */
-    .cs-footer {
-      padding: 28px 40px;
-      text-align: center;
-      font-size: 13px;
-      color: rgba(255,255,255,0.3);
-      border-top: 1px solid rgba(255,255,255,0.07);
-      position: relative;
-      z-index: 1;
+    .cs-close:hover { background: rgba(255,255,255,0.22); color: #fff; }
+    .cs-modal-body { padding: 36px 44px 40px; }
+    .cs-modal-body label {
+      display: block; font-size: 13px; font-weight: 700; color: var(--c-charcoal);
+      margin-bottom: 8px; letter-spacing: 0.3px;
     }
+    .cs-notify-row { display: flex; gap: 10px; }
+    .cs-notify-row input {
+      flex: 1; padding: 13px 16px; border-radius: var(--r-full);
+      border: 1.5px solid var(--c-hairline-strong); font-family: var(--font-display);
+      font-size: 14px; color: var(--c-ink); outline: none; transition: border-color .2s;
+    }
+    .cs-notify-row input:focus { border-color: var(--c-brand-green-dark); }
+    .cs-notify-row input::placeholder { color: var(--c-stone); }
+    .cs-notify-btn {
+      background: var(--c-brand-green); color: #fff; border: none; border-radius: var(--r-full);
+      padding: 13px 22px; font-family: var(--font-display); font-size: 14px; font-weight: 700;
+      cursor: pointer; white-space: nowrap; display: flex; align-items: center; gap: 7px;
+      transition: background .2s;
+    }
+    .cs-notify-btn:hover { background: var(--c-brand-green-dark); }
+    .cs-success {
+      display: none; align-items: center; gap: 10px;
+      color: var(--c-brand-green-dark); font-size: 14px; font-weight: 600; margin-top: 12px;
+    }
+    .cs-divider { border: none; border-top: 1px solid var(--c-hairline); margin: 24px 0; }
+    .cs-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+    .cs-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--c-surface); border: 1px solid var(--c-hairline);
+      border-radius: var(--r-full); padding: 9px 15px; font-size: 13px;
+      color: var(--c-slate); text-decoration: none; transition: border-color .2s, color .2s;
+    }
+    .cs-pill:hover { border-color: var(--c-brand-green); color: var(--c-brand-green-dark); }
+    .cs-pill svg { width: 14px; height: 14px; color: var(--c-brand-green-dark); }
+    .cs-dismiss {
+      display: block; text-align: center; margin-top: 18px;
+      font-size: 13px; color: var(--c-stone); cursor: pointer;
+      background: none; border: none; font-family: var(--font-display);
+    }
+    .cs-dismiss:hover { color: var(--c-slate); text-decoration: underline; }
 
-    @media (max-width: 600px) {
-      .cs-header { padding: 24px 20px; }
-      .cs-header img { height: 36px; }
-      .cd-block { padding: 16px 18px; min-width: 72px; }
-      .cd-num { font-size: 38px; }
-      .cs-footer { padding: 24px 20px; }
+    /* ======================= HIGHLIGHTS SECTION ======================= */
+    .highlights-grid {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 20px;
+    }
+    .highlight-card {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: #fff; border: 1px solid var(--c-hairline);
+      border-radius: var(--r-lg); padding: 24px;
+      box-shadow: var(--elev-1); transition: box-shadow .2s, transform .2s;
+    }
+    .highlight-card:hover { box-shadow: var(--elev-2); transform: translateY(-2px); }
+    .highlight-card .hc-icon {
+      width: 48px; height: 48px; border-radius: var(--r-md); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .highlight-card h4 { font-size: 17px; margin-bottom: 5px; }
+    .highlight-card p { font-size: 14px; color: var(--c-steel); line-height: 1.6; }
+
+    /* ======================= BUSINESS HOURS CARD ======================= */
+    .bh-section { background: var(--c-surface); padding: 72px 0; }
+    .bh-card {
+      max-width: 520px; margin: 0 auto;
+      background: var(--c-brand-blue-deep); color: #fff;
+      border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--elev-3);
+    }
+    .bh-header {
+      background: var(--c-brand-blue-dark); padding: 18px 28px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .bh-header h4 { font-size: 18px; color: #fff; }
+    .open-badge {
+      background: var(--c-brand-green); color: #fff;
+      font-size: 11px; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; padding: 4px 10px;
+      border-radius: var(--r-full); margin-left: auto;
+    }
+    .bh-body { padding: 24px 28px; }
+    .bh-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 15px;
+    }
+    .bh-row:last-child { border-bottom: none; }
+    .bh-row .day { color: rgba(255,255,255,0.7); }
+    .bh-row .time { font-weight: 700; color: #fff; }
+    .bh-row .avail { color: var(--c-brand-green-bright); font-size: 13px; }
+
+    /* ======================= SERVICES LIST ======================= */
+    .services-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+    .services-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: var(--c-charcoal); }
+    .services-list li svg { color: var(--c-brand-green); flex-shrink: 0; margin-top: 2px; }
+
+    /* ======================= IMAGE MOSAIC ======================= */
+    .mosaic {
+      display: grid; gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 200px 200px;
+    }
+    .mosaic-main {
+      grid-row: 1 / 3; border-radius: var(--r-lg); overflow: hidden; position: relative;
+    }
+    .mosaic-main image-slot { width: 100%; height: 100%; }
+    .mosaic-sm { border-radius: var(--r-lg); overflow: hidden; }
+    .mosaic-sm image-slot { width: 100%; height: 100%; }
+    .play-btn {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center;
+      color: var(--c-brand-blue-deep); cursor: pointer; transition: background .2s, transform .2s;
+    }
+    .play-btn:hover { background: #fff; transform: translate(-50%,-50%) scale(1.08); }
+
+    /* ======================= TEAM SECTION ======================= */
+    .bg-blue-hero { background: var(--c-brand-blue-deep); }
+    .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .team-card {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--r-xl); padding: 32px 24px; text-align: center;
+      transition: background .2s, transform .2s;
+    }
+    .team-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-3px); }
+    .team-avatar {
+      width: 100px; height: 100px; border-radius: 50%;
+      background: var(--c-brand-blue-dark);
+      border: 3px solid var(--c-brand-green);
+      margin: 0 auto 20px;
+      overflow: hidden; display: flex; align-items: center; justify-content: center;
+    }
+    .team-avatar image-slot { width: 100%; height: 100%; }
+    .team-card h4 { font-size: 19px; color: #fff; margin-bottom: 6px; }
+    .team-card .role { font-size: 13px; color: var(--c-brand-green-bright); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+    .team-card .cred { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+    @media (max-width: 760px) {
+      .highlights-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .mosaic { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .mosaic-main { grid-row: auto; height: 240px; }
+      .mosaic-sm { height: 160px; }
+      .cs-modal-top, .cs-modal-body { padding: 28px 24px; }
+      .cs-notify-row { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
-  <!-- background blobs -->
-  <div class="bg-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-
-  <div class="page">
-
-    <!-- header -->
-    <header class="cs-header">
-      <img src="assets/logo-horizontal-trim.png" alt="Gorman Medical & Specialty Center">
-      <a class="cs-contact" href="tel:+15876353567">
-        <i data-lucide="phone-call"></i>
-        +1 587-635-3567
-      </a>
-    </header>
-
-    <!-- main -->
-    <main class="cs-main">
-      <div class="cs-card">
-
-        <div class="cs-badge">
-          <i data-lucide="clock-4"></i>
-          Launching Soon
-        </div>
-
-        <h1>Something Great<br>is <span>Coming Soon</span></h1>
-
-        <p>Gorman Medical & Specialty Center is putting the finishing touches on our new website. World-class healthcare, all under one roof — opening soon in Edmonton.</p>
-
-        <!-- email notify -->
-        <div class="notify-form" id="notify-form">
-          <input type="email" id="notify-email" placeholder="Enter your email address">
-          <button class="notify-btn" onclick="handleNotify()">
-            <i data-lucide="bell"></i>
-            Notify Me
-          </button>
-        </div>
-        <div class="success-msg" id="success-msg">
-          <i data-lucide="circle-check"></i>
-          You're on the list! We'll notify you when we launch.
-        </div>
-
-        <!-- contact pills -->
-        <div class="info-pills">
-          <a class="pill" href="tel:+15876353567">
-            <i data-lucide="phone"></i>
-            +1 587-635-3567
-          </a>
-          <a class="pill" href="mailto:info@gormanmedical.com">
-            <i data-lucide="mail"></i>
-            info@gormanmedical.com
-          </a>
-          <span class="pill">
-            <i data-lucide="map-pin"></i>
-            15366 18 St NW, Edmonton
-          </span>
-        </div>
-
+<!-- ======================= COMING SOON POPUP ======================= -->
+<div class="cs-overlay" id="cs-overlay">
+  <div class="cs-modal">
+    <div class="cs-modal-top">
+      <button class="cs-close" onclick="closePopup()" aria-label="Close">
+        <i data-lucide="x" style="width:16px;height:16px"></i>
+      </button>
+      <div class="badge">
+        <i data-lucide="clock-4" style="width:12px;height:12px"></i>
+        Coming Soon
       </div>
-    </main>
-
-    <!-- footer -->
-    <footer class="cs-footer">
-      © 2026 Gorman Medical & Specialty Center. All rights reserved. &nbsp;·&nbsp; Made by <a href="https://digitalodyssey.agency" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);text-decoration:underline;transition:color .2s;" onmouseover="this.style.color='#84C048'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Digital Odyssey</a>
-    </footer>
-
+      <h2>Our Website is<br><span>Launching Soon!</span></h2>
+      <p>We're putting the finishing touches on something great. Sign up to be notified when we go live.</p>
+    </div>
+    <div class="cs-modal-body">
+      <label for="cs-email">Get notified at launch</label>
+      <div class="cs-notify-row">
+        <input type="email" id="cs-email" placeholder="Enter your email address">
+        <button class="cs-notify-btn" onclick="submitNotify()">
+          <i data-lucide="bell" style="width:14px;height:14px"></i>
+          Notify Me
+        </button>
+      </div>
+      <div class="cs-success" id="cs-success">
+        <i data-lucide="circle-check" style="width:18px;height:18px"></i>
+        You're on the list! We'll be in touch.
+      </div>
+      <hr class="cs-divider">
+      <div class="cs-pills">
+        <a class="cs-pill" href="tel:+15876353567">
+          <i data-lucide="phone"></i> +1 587-635-3567
+        </a>
+        <a class="cs-pill" href="mailto:info@gormanmedical.com">
+          <i data-lucide="mail"></i> info@gormanmedical.com
+        </a>
+        <span class="cs-pill">
+          <i data-lucide="map-pin"></i> Edmonton, AB
+        </span>
+      </div>
+      <button class="cs-dismiss" onclick="closePopup()">I'll look around first →</button>
+    </div>
   </div>
+</div>
 
-  <script src="website/image-slot.js"></script>
-  <script>
-    lucide.createIcons();
+<!-- ======================= TOP UTILITY BAR ======================= -->
+<div class="topbar">
+  <div class="container">
+    <div class="tb-left">
+      <a href="tel:+15876353567"><i data-lucide="phone-call" class="ic"></i> Call us: +1 587-635-3567</a>
+      <a href="#" class="hide-sm"><i data-lucide="map-pin" class="ic"></i> 15366 18 St NW, Edmonton</a>
+    </div>
+    <a href="mailto:info@gormanmedical.com"><i data-lucide="mail" class="ic"></i> info@gormanmedical.com</a>
+  </div>
+</div>
 
-    // ---- Notify form ----
-    function handleNotify() {
-      const email = document.getElementById('notify-email').value.trim();
-      if (!email || !email.includes('@')) {
-        document.getElementById('notify-email').focus();
-        return;
-      }
-      document.getElementById('notify-form').style.display = 'none';
-      const msg = document.getElementById('success-msg');
-      msg.style.display = 'flex';
+<!-- ======================= HEADER ======================= -->
+<header class="header">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="assets/logo-horizontal-trim.png" alt="Gorman Medical & Specialty Center"></a>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="specialties.html">Specialties</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="spacer"></div>
+    <div class="header-cta">
+      <span style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--c-brand-blue-deep)">
+        <i data-lucide="phone" style="width:16px;height:16px;color:var(--c-brand-blue)"></i>
+        587-635-3567
+      </span>
+      <a class="btn btn-primary" href="contact.html"><i data-lucide="calendar-check" class="ic"></i> Book Appointment</a>
+    </div>
+    <button class="menu-toggle" aria-label="Open menu"><i data-lucide="menu"></i></button>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section class="hero">
+  <div class="hero-bg">
+    <image-slot id="hero-bg" fit="cover" placeholder="Drop a hospital / facility photo"></image-slot>
+  </div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Hospital &amp; Specialty Clinic</div>
+        <h1>Comprehensive Family Care You Can Trust</h1>
+        <p class="hero-sub">Providing compassionate, patient-centered medical care for individuals and families in Edmonton. Board-certified physicians, 20+ specialties, one location.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="contact.html"><i data-lucide="calendar-check" class="ic"></i> Book Appointment</a>
+          <a class="btn btn-outline-light" href="contact.html"><i data-lucide="phone" class="ic"></i> Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <image-slot id="hero-doctor" fit="cover" shape="rounded" radius="20" placeholder="Drop a doctor / provider photo"></image-slot>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLINICAL HIGHLIGHTS ======================= -->
+<section class="section">
+  <div class="container">
+    <div class="center" style="max-width:600px;margin:0 auto 52px">
+      <div class="eyebrow center">Our Clinical Highlights</div>
+      <h2 class="h-section">Care That Goes Beyond the Basics</h2>
+    </div>
+    <div class="highlights-grid">
+
+      <div class="highlight-card">
+        <div class="hc-icon" style="background:var(--c-brand-blue-soft);color:var(--c-brand-blue-dark)">
+          <i data-lucide="calendar-check" style="width:24px;height:24px"></i>
+        </div>
+        <div>
+          <h4>Same-Day Appointment</h4>
+          <p>We provide same-day consultation so you get the care you need, when you need it most.</p>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        <div class="hc-icon" style="background:var(--c-brand-green-soft);color:var(--c-brand-green-dark)">
+          <i data-lucide="users" style="width:24px;height:24px"></i>
+        </div>
+        <div>
+          <h4>Family Medicine</h4>
+          <p>Comprehensive care for all ages — from newborns to seniors — under one trusted roof.</p>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        <div class="hc-icon" style="background:var(--c-brand-green-soft);color:var(--c-brand-green-dark)">
+          <i data-lucide="shield-check" style="width:24px;height:24px"></i>
+        </div>
+        <div>
+          <h4>Preventive Care</h4>
+          <p>Regular check-ups, screenings, and immunizations to keep you and your family healthy.</p>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        <div class="hc-icon" style="background:var(--c-brand-blue-soft);color:var(--c-brand-blue-dark)">
+          <i data-lucide="heart-pulse" style="width:24px;height:24px"></i>
+        </div>
+        <div>
+          <h4>Chronic Disease Management</h4>
+          <p>Personalized care plans for patients with chronic issues, designed for long-term wellbeing.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================= BUSINESS HOURS ======================= -->
+<div class="bh-section">
+  <div class="container">
+    <div class="center" style="margin-bottom:40px">
+      <div class="eyebrow center">When We're Open</div>
+      <h2 class="h-section">Business Hours</h2>
+    </div>
+    <div class="bh-card">
+      <div class="bh-header">
+        <i data-lucide="clock" style="width:20px;height:20px;color:var(--c-brand-green-bright)"></i>
+        <h4>Opening Hours</h4>
+        <span class="open-badge">Open</span>
+      </div>
+      <div class="bh-body">
+        <div class="bh-row">
+          <span class="day">Monday – Friday</span>
+          <span class="time">09:00 AM – 05:00 PM</span>
+        </div>
+        <div class="bh-row">
+          <span class="day">Saturday</span>
+          <span class="time" style="color:rgba(255,255,255,0.4)">Closed</span>
+        </div>
+        <div class="bh-row">
+          <span class="day">Sunday</span>
+          <span class="time" style="color:rgba(255,255,255,0.4)">Closed</span>
+        </div>
+        <div class="bh-row">
+          <span class="day">Available Specialties</span>
+          <span class="avail">Neurology, Internal Medicine &amp; Pediatrics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= OUR SERVICES ======================= -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+      <div>
+        <div class="eyebrow">Our Services</div>
+        <h2 class="h-section" style="margin-bottom:32px">Everything You Need Under One Roof</h2>
+        <ul class="services-list">
+          <li><i data-lucide="circle-check-big" style="width:18px;height:18px"></i> Walk-in patients welcomed</li>
+          <li><i data-lucide="circle-check-big" style="width:18px;height:18px"></i> Family Medicine &amp; Primary Care</li>
+          <li><i data-lucide="circle-check-big" style="width:18px;height:18px"></i> Chronic Disease Management</li>
+          <li><i data-lucide="circle-check-big" style="width:18px;height:18px"></i> Preventive Health &amp; Screening</li>
+          <li><i data-lucide="circle-check-big" style="width:18px;height:18px"></i> Minor Procedures</li>
+          <li><i data-lucide="circle-check-big" style="width:18px;height:18px"></i> Men's and Women's Health</li>
+          <li><i data-lucide="circle-check-big" style="width:18px;height:18px"></i> Pediatric Care</li>
+          <li><i data-lucide="circle-check-big" style="width:18px;height:18px"></i> Mental Health Services</li>
+          <li><i data-lucide="circle-check-big" style="width:18px;height:18px"></i> Occupational &amp; Workplace Medicine (WCB)</li>
+          <li><i data-lucide="circle-check-big" style="width:18px;height:18px"></i> Medical Forms &amp; Insurance Assessments</li>
+          <li><i data-lucide="circle-check-big" style="width:18px;height:18px"></i> Travel Medicine &amp; Vaccinations</li>
+          <li><i data-lucide="circle-check-big" style="width:18px;height:18px"></i> Diagnostic Referrals &amp; Specialist Coordination</li>
+        </ul>
+        <a class="btn btn-primary" href="contact.html" style="margin-top:32px"><i data-lucide="calendar-check" class="ic"></i> Book Appointment</a>
+      </div>
+      <div class="mosaic">
+        <div class="mosaic-main">
+          <image-slot id="svc-main" fit="cover" placeholder="Main clinic photo"></image-slot>
+          <div class="play-btn">
+            <i data-lucide="play" style="width:24px;height:24px;margin-left:3px"></i>
+          </div>
+        </div>
+        <div class="mosaic-sm">
+          <image-slot id="svc-sm1" fit="cover" placeholder="Doctor photo"></image-slot>
+        </div>
+        <div class="mosaic-sm">
+          <image-slot id="svc-sm2" fit="cover" placeholder="Care photo"></image-slot>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= OUR TEAM ======================= -->
+<section class="section bg-blue-hero">
+  <div class="container">
+    <div class="center" style="margin-bottom:52px">
+      <div class="eyebrow center" style="color:var(--c-brand-green-bright)">Our Team</div>
+      <h2 class="h-section" style="color:#fff">Meet Our Physicians</h2>
+      <p class="lead" style="color:rgba(255,255,255,0.65);margin-top:14px">Experienced, compassionate doctors dedicated to your long-term health.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">
+          <image-slot id="doc-1" fit="cover" placeholder="Doctor photo"></image-slot>
+        </div>
+        <h4>Dr. Ibrahim Shebani</h4>
+        <div class="role">Family Medicine</div>
+        <div class="cred">MD, LMCC, CCFP</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <image-slot id="doc-2" fit="cover" placeholder="Doctor photo"></image-slot>
+        </div>
+        <h4>Dr. Marwan Al-Doori</h4>
+        <div class="role">Family Medicine</div>
+        <div class="cred">MD, LMCC, CCFP</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <image-slot id="doc-3" fit="cover" placeholder="Doctor photo"></image-slot>
+        </div>
+        <h4>Dr. Hatem Naal</h4>
+        <div class="role">General Practice</div>
+        <div class="cred">MD, CCFP</div>
+      </div>
+    </div>
+    <div class="center" style="margin-top:44px">
+      <a class="btn btn-outline-light" href="contact.html"><i data-lucide="calendar-check" class="ic"></i> Make Appointment</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CTA BAND ======================= -->
+<section style="padding:0 0 96px;background:var(--c-surface)">
+  <div class="container" style="padding-top:96px">
+    <div class="cta-band">
+      <div>
+        <h2>Ready to prioritize your health?</h2>
+        <p>Book an appointment today or call us — new patients are always welcome.</p>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="contact.html"><i data-lucide="calendar-check" class="ic"></i> Book Appointment</a>
+        <a class="btn btn-outline-light" href="tel:+15876353567"><i data-lucide="phone" class="ic"></i> +1 587-635-3567</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="brand-foot">
+        <img src="assets/logo-horizontal-trim.png" alt="Gorman Medical & Specialty Center" style="filter:brightness(0) invert(1);opacity:.95">
+        <p class="blurb">Comprehensive primary and specialty healthcare delivered with compassion, expertise, and modern technology.</p>
+        <div class="socials">
+          <a href="#"><i data-lucide="facebook" style="width:18px"></i></a>
+          <a href="#"><i data-lucide="instagram" style="width:18px"></i></a>
+          <a href="#"><i data-lucide="linkedin" style="width:18px"></i></a>
+          <a href="#"><i data-lucide="twitter" style="width:18px"></i></a>
+        </div>
+      </div>
+      <div>
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Services</h6>
+        <ul>
+          <li><a href="services.html">Primary Care</a></li>
+          <li><a href="services.html">Cardiology</a></li>
+          <li><a href="services.html">Diagnostics</a></li>
+          <li><a href="services.html">Pediatrics</a></li>
+          <li><a href="services.html">Women's Health</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Get in Touch</h6>
+        <ul>
+          <li class="contact-li"><i data-lucide="map-pin" class="ic" style="width:18px"></i> 15366 18 St NW, Edmonton, AB T5Y 3Z5</li>
+          <li class="contact-li"><i data-lucide="phone" class="ic" style="width:18px"></i> +1 587-635-3567</li>
+          <li class="contact-li"><i data-lucide="mail" class="ic" style="width:18px"></i> info@gormanmedical.com</li>
+          <li class="contact-li"><i data-lucide="clock" class="ic" style="width:18px"></i> Mon–Fri 9AM–5PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Gorman Medical &amp; Specialty Center. All rights reserved. &nbsp;·&nbsp; Made by <a href="https://digitalodyssey.agency" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);text-decoration:underline;transition:color .2s;" onmouseover="this.style.color='#84C048'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Digital Odyssey</a></span>
+      <span>Privacy Policy · Terms of Service · Accessibility</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="backdrop" onclick="closeMobileMenu()"></div>
+  <div class="panel">
+    <button class="close" onclick="closeMobileMenu()"><i data-lucide="x"></i></button>
+    <img src="assets/logo-horizontal-trim.png" alt="Gorman Medical">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="specialties.html">Specialties</a>
+    <a href="contact.html">Contact</a>
+    <a class="btn btn-primary" href="contact.html"><i data-lucide="calendar-check" class="ic"></i> Book Appointment</a>
+  </div>
+</div>
+
+<script src="website/image-slot.js"></script>
+<script src="website/app.js"></script>
+<script>
+  lucide.createIcons();
+
+  // Coming Soon Popup
+  function closePopup() {
+    const overlay = document.getElementById('cs-overlay');
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity .25s ease';
+    setTimeout(() => overlay.style.display = 'none', 250);
+  }
+  function submitNotify() {
+    const email = document.getElementById('cs-email').value.trim();
+    if (!email || !email.includes('@')) {
+      document.getElementById('cs-email').focus();
+      return;
     }
-  </script>
+    document.querySelector('.cs-notify-row').style.display = 'none';
+    document.getElementById('cs-success').style.display = 'flex';
+  }
+
+  // Close on backdrop click
+  document.getElementById('cs-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closePopup();
+  });
+
+  // Mobile menu
+  function closeMobileMenu() { document.getElementById('mobile-menu').classList.remove('open'); }
+  document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.add('open');
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
