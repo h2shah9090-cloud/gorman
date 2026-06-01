@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" fill="none">
+  <rect width="300" height="400" fill="#E6EEF7"/>
+  <!-- body / coat -->
+  <ellipse cx="150" cy="310" rx="90" ry="70" fill="#4884C0" opacity="0.25"/>
+  <rect x="80" y="200" width="140" height="180" rx="20" fill="#4884C0" opacity="0.3"/>
+  <!-- white coat lapels -->
+  <polygon points="150,200 110,200 95,360 150,290" fill="white" opacity="0.6"/>
+  <polygon points="150,200 190,200 205,360 150,290" fill="white" opacity="0.6"/>
+  <!-- stethoscope -->
+  <path d="M120 230 Q130 260 150 265 Q170 260 180 230" stroke="#2C547A" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <circle cx="150" cy="275" r="10" fill="#2C547A" opacity="0.7"/>
+  <!-- head -->
+  <ellipse cx="150" cy="130" rx="55" ry="62" fill="#B8CDE0"/>
+  <!-- hair -->
+  <ellipse cx="150" cy="80" rx="55" ry="30" fill="#6CA438" opacity="0.5"/>
+  <!-- face -->
+  <ellipse cx="135" cy="125" rx="7" ry="8" fill="#2C547A" opacity="0.4"/>
+  <ellipse cx="165" cy="125" rx="7" ry="8" fill="#2C547A" opacity="0.4"/>
+  <path d="M135 150 Q150 165 165 150" stroke="#2C547A" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- cross badge -->
+  <rect x="55" y="240" width="34" height="34" rx="6" fill="#84C048" opacity="0.85"/>
+  <rect x="68" y="247" width="8" height="20" rx="2" fill="white"/>
+  <rect x="62" y="253" width="20" height="8" rx="2" fill="white"/>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" fill="none">
+  <!-- sky gradient -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E6EEF7"/>
+      <stop offset="100%" stop-color="#C8DCF0"/>
+    </linearGradient>
+    <linearGradient id="bldg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#EDF5E1"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="500" fill="url(#sky)"/>
+
+  <!-- ground -->
+  <rect x="0" y="420" width="900" height="80" fill="#84C048" opacity="0.2"/>
+  <rect x="0" y="430" width="900" height="70" fill="#84C048" opacity="0.15"/>
+
+  <!-- main building -->
+  <rect x="180" y="160" width="540" height="280" rx="4" fill="url(#bldg)" stroke="#4884C0" stroke-width="2" opacity="0.9"/>
+
+  <!-- roof line -->
+  <rect x="160" y="148" width="580" height="20" rx="4" fill="#4884C0" opacity="0.7"/>
+
+  <!-- sign band -->
+  <rect x="180" y="168" width="540" height="44" fill="#2C547A" opacity="0.9"/>
+  <text x="450" y="197" font-family="Montserrat,Arial,sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle" letter-spacing="1">GORMAN MEDICAL &amp; SPECIALTY CENTER</text>
+
+  <!-- windows row 1 -->
+  <rect x="210" y="230" width="70" height="55" rx="4" fill="#4884C0" opacity="0.25"/>
+  <rect x="300" y="230" width="70" height="55" rx="4" fill="#4884C0" opacity="0.25"/>
+  <rect x="530" y="230" width="70" height="55" rx="4" fill="#4884C0" opacity="0.25"/>
+  <rect x="620" y="230" width="70" height="55" rx="4" fill="#4884C0" opacity="0.25"/>
+
+  <!-- centre entrance -->
+  <rect x="385" y="220" width="130" height="220" rx="6" fill="#E6EEF7" stroke="#4884C0" stroke-width="2"/>
+  <!-- door -->
+  <rect x="415" y="340" width="70" height="100" rx="4" fill="#4884C0" opacity="0.5"/>
+  <circle cx="478" cy="395" r="5" fill="#fff" opacity="0.9"/>
+  <!-- entrance arch -->
+  <path d="M385,280 Q450,220 515,280" fill="#4884C0" opacity="0.15"/>
+  <!-- cross on entrance -->
+  <rect x="441" y="235" width="18" height="50" rx="3" fill="#84C048" opacity="0.85"/>
+  <rect x="428" y="248" width="44" height="18" rx="3" fill="#84C048" opacity="0.85"/>
+
+  <!-- windows row 2 -->
+  <rect x="210" y="310" width="70" height="50" rx="4" fill="#4884C0" opacity="0.2"/>
+  <rect x="300" y="310" width="70" height="50" rx="4" fill="#4884C0" opacity="0.2"/>
+  <rect x="530" y="310" width="70" height="50" rx="4" fill="#4884C0" opacity="0.2"/>
+  <rect x="620" y="310" width="70" height="50" rx="4" fill="#4884C0" opacity="0.2"/>
+
+  <!-- pillars -->
+  <rect x="200" y="148" width="16" height="292" fill="#4884C0" opacity="0.35"/>
+  <rect x="684" y="148" width="16" height="292" fill="#4884C0" opacity="0.35"/>
+
+  <!-- path to entrance -->
+  <rect x="415" y="440" width="70" height="30" fill="#4884C0" opacity="0.12"/>
+
+  <!-- small trees -->
+  <ellipse cx="140" cy="390" rx="40" ry="50" fill="#84C048" opacity="0.55"/>
+  <rect x="136" y="415" width="8" height="30" fill="#6CA438" opacity="0.6"/>
+  <ellipse cx="760" cy="390" rx="40" ry="50" fill="#84C048" opacity="0.55"/>
+  <rect x="756" y="415" width="8" height="30" fill="#6CA438" opacity="0.6"/>
+
+  <!-- clouds -->
+  <ellipse cx="100" cy="80" rx="60" ry="28" fill="white" opacity="0.7"/>
+  <ellipse cx="150" cy="68" rx="45" ry="24" fill="white" opacity="0.7"/>
+  <ellipse cx="800" cy="90" rx="55" ry="25" fill="white" opacity="0.65"/>
+  <ellipse cx="845" cy="78" rx="38" ry="20" fill="white" opacity="0.65"/>
+
+  <!-- gorman cross watermark -->
+  <circle cx="450" cy="90" r="32" fill="none" stroke="#84C048" stroke-width="2" opacity="0.3"/>
+  <rect x="442" y="72" width="16" height="36" rx="3" fill="#84C048" opacity="0.2"/>
+  <rect x="434" y="80" width="32" height="16" rx="3" fill="#84C048" opacity="0.2"/>
+</svg>
